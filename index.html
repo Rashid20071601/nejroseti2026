@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пошаговый план: как эксперту внедрить нейросети в работу в 2026 году</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{--bg:#171A1D;--iv:#F3F0E8;--t:#2DD4BF;--g:#8A929A;--c:#1F2428;--l:#2B3136;--e:cubic-bezier(.22,.8,.26,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--iv);font:400 17px/1.65 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.w{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:76px 0;border-top:1px solid var(--l)}
+h1,h2{font-family:Unbounded,Manrope,sans-serif;font-weight:600;line-height:1.18}
+h1{font-size:clamp(25px,5.6vw,42px);margin:18px 0 24px}
+h2{font-size:clamp(21px,3.9vw,30px);margin:14px 0 22px}
+h3{font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.35}
+p+p{margin-top:14px}
+.tag{font:700 12px Manrope,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--g)}
+.tag b{color:var(--t);margin-right:10px}
+.g{color:var(--g)}.t{color:var(--t)}
+.ln{height:2px;width:56px;background:var(--t);margin:6px 0 18px}
+.card{background:var(--c);border:1px solid var(--l);border-radius:16px;padding:22px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--t);transform:translateY(-2px)}
+.gr{display:grid;gap:12px;margin:24px 0}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.n{font:600 13px Unbounded,sans-serif;color:var(--t);display:block;margin-bottom:10px}
+.big{font:600 34px Unbounded,sans-serif;color:var(--t);display:block;margin-bottom:6px}
+.sc{overflow-x:auto;margin:24px 0}
+table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+th{text-align:left;font:700 11px Manrope,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--g);padding:10px 14px;border-bottom:1px solid var(--t)}
+td{padding:14px;border-bottom:1px solid var(--l);vertical-align:top}
+td:first-child{font-weight:800;color:var(--t)}
+tr{transition:background .2s}tbody tr:hover{background:var(--c)}
+h3.k{margin:44px 0 12px;font-family:Unbounded,sans-serif;font-size:16px}
+.pr{position:relative;background:var(--c);border:1px solid var(--l);border-left:3px solid var(--t);border-radius:12px;padding:18px 20px;font-size:15px}
+.pr p{margin:0}.pr p+p{margin-top:12px}
+.pr em{font-style:normal;color:var(--t);font-weight:600}
+.cp{position:absolute;top:10px;right:10px;background:none;border:1px solid var(--l);color:var(--g);font:600 12px Manrope,system-ui,sans-serif;padding:5px 11px;border-radius:99px;cursor:pointer;transition:.2s}
+.cp:hover{border-color:var(--t);color:var(--t)}
+.pr{padding-right:20px;padding-top:46px}
+.chk{font-size:15px;color:var(--g);margin-top:10px}.chk b{color:var(--iv)}
+.stp{list-style:none;counter-reset:s;display:grid;gap:10px;margin:22px 0;padding:0}
+.stp li{counter-increment:s;display:flex;gap:16px;align-items:flex-start;background:var(--c);border:1px solid var(--l);border-radius:14px;padding:16px 18px}
+.stp li:before{content:counter(s);flex:none;width:32px;height:32px;border:1.5px solid var(--t);border-radius:50%;display:grid;place-items:center;font:600 13px Unbounded,sans-serif;color:var(--t)}
+.q{border-left:2px solid var(--t);padding:2px 0 2px 18px;margin:22px 0;font-size:19px;font-weight:600}
+.btn{display:inline-block;background:var(--t);color:#171A1D;font-weight:800;padding:16px 30px;border-radius:99px;text-decoration:none;margin-top:18px;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px #2dd4bf40}
+.cta{border-color:var(--t);padding:32px 26px}
+footer{padding:40px 0 60px;text-align:center;color:var(--g);font-size:13px;border-top:1px solid var(--l)}
+#bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--t);transform:scaleX(0);transform-origin:left;z-index:9}
+.js [data-a],.js .st>*{opacity:0;transform:translateY(16px);transition:opacity .7s var(--e),transform .7s var(--e)}
+.js [data-a].in,.js .in .st>*,.js .st.in>*{opacity:1;transform:none}
+.js .ln{transform:scaleX(0);transform-origin:left;transition:transform .9s var(--e) .2s}
+.js .in .ln,.js .ln.in{transform:none}
+.sv{display:block;width:100%;max-width:520px;height:auto;margin:26px auto}.sv .tx{fill:var(--iv);font:600 15px Manrope,sans-serif}.sv .gt{fill:var(--g);font:700 12px Manrope,sans-serif}.sv .tt{fill:var(--t);font:700 12px Manrope,sans-serif}.sv .dk{fill:#171A1D;font:800 14px Manrope,sans-serif}.sv .f{fill:var(--c);stroke:var(--l);stroke-width:1.5}.sv .ao{fill:none;stroke:var(--t);stroke-width:2}.sv .ft{fill:var(--t)}.sv .fg{fill:var(--g);opacity:.45}.sv .a{fill:none;stroke:var(--t);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.sv .d{fill:none;stroke:var(--g);stroke-width:1.5;stroke-dasharray:5 6}
+@media(prefers-reduced-motion:reduce){.js [data-a],.js .st>*,.js .ln{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.ch .sg{pathLength:1}
+.js .ch .sg{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .3s ease-out calc(var(--i)*.38s + .15s)}
+.js .ch.in .sg{stroke-dashoffset:0}
+.js .ch .dt{transform:scale(0);transform-box:fill-box;transform-origin:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1) calc(var(--i)*.38s)}
+.js .ch.in .dt{transform:none}
+.js .ch .lb{opacity:0;transition:opacity .4s ease calc(var(--i)*.38s + .2s)}
+.js .ch.in .lb{opacity:1}
+.js .sq .bd{opacity:0;transform:scale(1.4) rotate(-5deg);transform-box:fill-box;transform-origin:center;transition:opacity .2s ease calc(var(--i)*.5s + .3s),transform .45s cubic-bezier(.34,1.56,.64,1) calc(var(--i)*.5s + .3s)}
+.js .sq.in .bd{opacity:1;transform:none}
+.js .sq .fa{opacity:0;transition:opacity .4s ease calc(var(--i)*.5s + .1s)}
+.js .sq.in .fa{opacity:1}
+.lp{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:26px 0}
+.lp b{font-weight:700;font-size:14px;background:var(--c);border:1px solid var(--l);border-radius:99px;padding:9px 16px}
+.lp .lo{color:var(--t);font-weight:800;font-size:14px}
+.lp .rt{display:inline-block}
+.lp i.ar{display:block;width:26px;height:2px;background:var(--t);position:relative;flex:none}
+.lp i.ar:after{content:"";position:absolute;right:1px;top:-3px;width:8px;height:8px;border:solid var(--t);border-width:2px 2px 0 0;transform:rotate(45deg)}
+.js .lp>*{opacity:0;transition:opacity .35s ease calc(var(--i)*.24s)}
+.js .lp.in>*{opacity:1}
+.js .lp i.ar{clip-path:inset(-8px 100% -8px 0);transition:clip-path .24s ease calc(var(--i)*.24s),opacity .1s calc(var(--i)*.24s)}
+.js .lp.in i.ar{clip-path:inset(-8px -8px -8px 0)}
+.js .lp .rt{transform:rotate(-360deg);transition:transform .9s var(--e) calc(var(--i)*.24s)}
+.js .lp.in .rt{transform:none}
+.stp li{position:relative}
+.stp li:not(:last-child):after{content:"";position:absolute;left:33px;top:48px;width:2px;height:calc(100% - 22px);background:var(--t);opacity:.45}
+.js .stp li:after{transform:scaleY(0);transform-origin:top;transition:transform .5s var(--e) calc(var(--d,0s) + .45s)}
+.js .stp.in li:after{transform:none}
+@media(max-width:600px){.lp{flex-direction:column;align-items:flex-start}.lp i.ar{transform:rotate(90deg);transform-origin:left center;margin:2px 0 20px 18px;width:22px}}
+@media(prefers-reduced-motion:reduce){.js .sq *,.js .stp li:after{transition:none!important;animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important;stroke-dashoffset:0!important}}
+
+body{position:relative}
+section,footer{position:relative;z-index:1}
+section{border-top:0}footer{border-top:0}
+section>.w{position:relative}
+section+section>.w:before{content:"";position:absolute;top:-76px;left:20px;right:20px;height:1px;background:var(--l)}
+.sv .bl{stroke-width:22;stroke-linecap:round}.sv .b1{stroke:var(--g);opacity:.45}.sv .b2{stroke:var(--t)}
+.js .b1{stroke-dasharray:318;stroke-dashoffset:318;transition:stroke-dashoffset 1.8s linear .15s}
+.js .b2{stroke-dasharray:128;stroke-dashoffset:128;transition:stroke-dashoffset .72s linear .15s}
+.js .sq.in .bl{stroke-dashoffset:0}
+.sv .ag{fill:none;stroke:var(--g);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sv .pg{fill:none;stroke:var(--g);stroke-width:1.5}.sv .gx{fill:var(--g);font:700 14px Manrope,sans-serif}
+.js .sq .rv{opacity:0;transform:translateY(8px);transition:opacity .45s ease var(--dl,0s),transform .45s ease var(--dl,0s)}
+.js .sq.in .rv{opacity:1;transform:none}
+.js .sq .ad{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset var(--du,.4s) ease var(--dl,0s)}
+.js .sq.in .ad{stroke-dashoffset:0}
+.rt2{transform-box:fill-box;transform-origin:center}
+.js .sq .rt2{transform:rotate(-360deg);transition:transform .9s var(--e) 2.1s}
+.js .sq.in .rt2{transform:none}
+.js .sc tbody tr{opacity:0;transform:translateY(12px);transition:opacity .3s ease calc(var(--i)*.12s),transform .3s ease calc(var(--i)*.12s),background .2s}
+.js .sc.in tbody tr{opacity:1;transform:none}
+.mp{margin:26px auto;max-width:520px}
+.sp{display:flex;align-items:center;gap:16px}
+.sp>span{flex:none;width:34px;height:34px;border:1.5px solid var(--t);border-radius:50%;display:grid;place-items:center;font:600 13px Unbounded,sans-serif;color:var(--t);background:var(--bg);margin-left:calc((100% - 34px)*var(--p))}
+.sp p{margin:0;font-size:16px}
+.cn{display:block;overflow:visible;width:calc(100% - 34px);margin-left:17px;height:56px}
+.cn path{fill:none;stroke:var(--t);stroke-width:2;stroke-dasharray:3 8;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.8}
+.js .mp .sp{opacity:0;transform:translateY(10px);transition:opacity .4s ease calc(var(--i)*.24s),transform .4s ease calc(var(--i)*.24s)}
+.js .mp.in .sp{opacity:1;transform:none}
+.js .mp .cn{clip-path:inset(-4px -4px 100% -4px);transition:clip-path .45s ease calc(var(--i)*.24s)}
+.js .mp.in .cn{clip-path:inset(-4px)}
+.bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;display:none}
+@media(min-width:1100px){.bg{display:block}}
+.ic{position:absolute;width:var(--s);height:var(--s);fill:none;stroke:var(--g);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.13;transform:rotate(var(--r));animation:fl var(--d) ease-in-out infinite;animation-delay:var(--l)}
+.ic.t{stroke:var(--t);opacity:.17}
+symbol *{vector-effect:non-scaling-stroke}
+@keyframes fl{50%{transform:translateY(-9px) rotate(calc(var(--r) + 4deg))}}
+@media(prefers-reduced-motion:reduce){.ic{animation:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:50%;top:-140px;width:760px;height:520px;transform:translateX(-50%);background:radial-gradient(closest-side,#2dd4bf1f,transparent);pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 4px}
+.chips span{font:700 13px Manrope,system-ui,sans-serif;color:var(--iv);background:var(--c);border:1px solid var(--l);border-radius:99px;padding:8px 14px}
+.chips span b{color:var(--t);font-weight:800}
+.btn.s{background:none;color:var(--t);border:1.5px solid var(--t);margin-top:22px}
+.btn.s:hover{background:var(--t);color:#171A1D}
+/* a11y */
+a:focus-visible,button:focus-visible{outline:2px solid var(--t);outline-offset:3px}
+::selection{background:var(--t);color:#171A1D}
+/* sticky cta */
+#fx{position:fixed;left:50%;bottom:18px;transform:translate(-50%,24px);z-index:10;opacity:0;pointer-events:none;margin:0;padding:13px 24px;font-size:15px;white-space:nowrap;box-shadow:0 8px 30px #0008;transition:opacity .3s,transform .3s}
+#fx.on{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+/* table -> cards on phones */
+@media(max-width:600px){
+ section{padding:56px 0}section+section>.w:before{top:-56px}
+ .sc{overflow:visible}table{min-width:0}thead{display:none}
+ table,tbody{display:block}
+ tbody tr{display:block;background:var(--c);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:10px}
+ td{display:block;padding:0;border:0}
+ td:first-child{font-size:16px;margin-bottom:10px}
+ td:nth-child(n+2){margin-top:8px}
+ td:nth-child(n+2):before{content:attr(data-l);display:block;font:700 11px Manrope,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:2px}
+ #fx{width:calc(100% - 32px);text-align:center}
+}
+@media(prefers-reduced-motion:reduce){#fx{transition:none}}
+
+/* prompt accordion */
+.ac{overflow:hidden;border:1px solid var(--l);border-radius:14px;background:var(--c);margin-bottom:10px;transition:border-color .25s}
+.ac:hover,.ac.o{border-color:var(--t)}
+.ac summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-weight:700;font-size:17px;line-height:1.35;border-radius:14px}
+.ac summary::-webkit-details-marker{display:none}
+.ac summary:after{content:"";flex:none;width:9px;height:9px;border:solid var(--t);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-2px,-2px);transition:transform .3s var(--e)}
+.ac.o summary:after{transform:rotate(225deg) translate(-2px,-2px)}
+.ac summary:focus-visible{outline:2px solid var(--t);outline-offset:-4px}
+.ac .bd2{padding:0 20px 20px}
+.ac .pr{background:var(--bg)}.ac .chk{margin-top:14px}
+.pr .lbl{display:block;font:700 11px Manrope,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--g);margin-bottom:3px}
+@media(prefers-reduced-motion:reduce){.ac summary:after{transition:none}}
+</style></head>
+<body>
+<div id="bar"></div><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="iu" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol><symbol id="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 17V7h3.5a2.5 2.5 0 010 5H9.5M8 14.5h5"/></symbol><symbol id="ib" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M10 4h4"/><circle cx="9" cy="14" r="1.3"/><circle cx="15" cy="14" r="1.3"/></symbol><symbol id="im" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-4 4v-4H4z"/></symbol></defs></svg><div class="bg" aria-hidden="true"><svg class="ic" style="top:7%;right:calc(50% + 470px);--s:40px;--r:-8deg;--d:9s;--l:-0.0s"><use href="#iu"/></svg><svg class="ic" style="top:22%;right:calc(50% + 360px);--s:32px;--r:10deg;--d:11s;--l:-1.7s"><use href="#ic"/></svg><svg class="ic t" style="top:38%;right:calc(50% + 430px);--s:43px;--r:-6deg;--d:10s;--l:-3.4s"><use href="#ib"/></svg><svg class="ic" style="top:54%;right:calc(50% + 330px);--s:35px;--r:8deg;--d:12s;--l:-5.1s"><use href="#im"/></svg><svg class="ic t" style="top:70%;right:calc(50% + 450px);--s:30px;--r:-10deg;--d:9s;--l:-6.8s"><use href="#iu"/></svg><svg class="ic" style="top:86%;right:calc(50% + 380px);--s:38px;--r:6deg;--d:11s;--l:-8.5s"><use href="#ic"/></svg><svg class="ic" style="top:12%;left:calc(50% + 340px);--s:37px;--r:8deg;--d:10s;--l:-10.2s"><use href="#ib"/></svg><svg class="ic" style="top:28%;left:calc(50% + 460px);--s:42px;--r:-6deg;--d:12s;--l:-11.9s"><use href="#iu"/></svg><svg class="ic t" style="top:44%;left:calc(50% + 370px);--s:33px;--r:10deg;--d:9s;--l:-13.6s"><use href="#im"/></svg><svg class="ic" style="top:60%;left:calc(50% + 440px);--s:44px;--r:-8deg;--d:11s;--l:-15.3s"><use href="#ic"/></svg><svg class="ic t" style="top:76%;left:calc(50% + 350px);--s:35px;--r:6deg;--d:10s;--l:-17.0s"><use href="#ib"/></svg><svg class="ic" style="top:91%;left:calc(50% + 420px);--s:32px;--r:-8deg;--d:12s;--l:-18.7s"><use href="#iu"/></svg></div>
+
+<section class="hero" style="border:0;padding-top:64px"><div class="w" data-a>
+<div class="tag"><b>01</b>Обещание</div>
+<h1>Пошаговый план: как эксперту внедрить <span class="t">нейросети</span> в свою работу в 2026 году</h1>
+<div class="ln"></div>
+<p>Для экспертов, фрилансеров и предпринимателей. Подойдёт тем, кто ещё не начинал. И тем, кто пробовал и не получил результата.</p>
+<p class="g">Это не курс. Это первые шаги, с которых можно начать уже сегодня.</p>
+<div class="chips"><span><b>5</b> готовых запросов</span><span><b>5</b> шагов на первые дни</span><span>Чтение <b>~10</b> минут</span></div>
+<a class="btn s" href="#prompts">Перейти к запросам</a>
+</div></section>
+
+<section><div class="w">
+<div data-a><div class="tag"><b>02</b>Ситуация</div><h2>Два эксперта, одна работа</h2><div class="ln"></div>
+<p>Представь двух экспертов. Они делают одну и ту же работу для одних и тех же клиентов.</p></div>
+<div class="gr g2 st" data-a>
+<div class="card"><span class="big">14 ч</span><h3>Первый</h3><p class="g">Сидит над задачами по 14 часов. Работы много, а клиентов и денег не прибавляется.</p></div>
+<div class="card"><span class="big">быстрее</span><h3>Второй</h3><p class="g">Часть работы отдаёт нейросети. Делает быстрее и дешевле, качество то же. Остаётся время для новых клиентов или для отдыха.</p></div>
+</div>
+<div data-a><svg class="sv sq" viewBox="0 0 420 112" role="img" aria-label="Время на одну задачу: у второго эксперта меньше"><text class="gt" x="0" y="12">ВРЕМЯ НА ОДНУ ЗАДАЧУ</text><text class="tx" x="0" y="52">Первый</text><line class="bl b1" x1="91" y1="47" x2="409" y2="47"/><text class="tx" x="0" y="96">Второй</text><line class="bl b2" x1="91" y1="91" x2="219" y2="91"/></svg><p>Большинство клиентов выберут второго: быстрее и дешевле при том же качестве.</p>
+<p class="q">Разница между ними лишь в том, как устроена работа.</p></div>
+</div></section>
+
+<section><div class="w">
+<div data-a><div class="tag"><b>03</b>Ошибки</div><h2>Почему просто «спросить нейросеть» не работает</h2><div class="ln"></div></div>
+<div class="gr st" data-a>
+<div class="card"><span class="n">01</span><h3>Нейросеть ничего не знает о тебе и твоей работе</h3><p class="g">Представь, что ты нанял помощника и в первый день сказал: «Займись клиентами». Он не знает, кто твои клиенты, какие у тебя цены и что ты им обещаешь. Результат будет общим.</p><p>Расскажи ему всё это, и ответ станет точнее. С нейросетью так же. Это называется <b class="t">контекст</b>.</p></div>
+<div class="card"><span class="n">02</span><h3>Начинай с задачи, где уже есть порядок</h3><p class="g">Лучше всего нейросеть работает там, где ты и сам знаешь, как выглядит хороший результат. Задача, которую ты делаешь почти на автомате.</p><p>Например, продажи. Есть скрипт, есть ответы на возражения, видно, сколько заявок стало покупками. Сразу понятно, справилась нейросеть или нет.</p></div>
+<div class="card"><span class="n">03</span><h3>Первый раз будет дольше</h3><p class="g">Задача, которая занимает у тебя час руками, с нейросетью может занять полтора или два. Нужно объяснить, получить результат, проверить, поправить.</p><p>Со второго раза быстрее. С пятого может выйти минут тридцать.</p></div>
+</div>
+<div data-a><svg class="sv ch sq" viewBox="0 0 420 190" role="img" aria-label="Пример: с каждым разом задача занимает меньше времени"><text class="gt" x="0" y="14">ПРИМЕР: ВРЕМЯ НА ОДНУ ЗАДАЧУ</text><path class="d" d="M0 104H420"/><text class="gt" x="420" y="96" text-anchor="end">руками: ~1 час</text><path class="a sg" pathLength="1" style="--i:0" d="M30 72L120 96"/><path class="a sg" pathLength="1" style="--i:1" d="M120 96L210 114"/><path class="a sg" pathLength="1" style="--i:2" d="M210 114L300 130"/><path class="a sg" pathLength="1" style="--i:3" d="M300 130L390 144"/><g class="ft"><circle class="dt" style="--i:0" cx="30" cy="72" r="5"/><circle class="dt" style="--i:1" cx="120" cy="96" r="5"/><circle class="dt" style="--i:2" cx="210" cy="114" r="5"/><circle class="dt" style="--i:3" cx="300" cy="130" r="5"/><circle class="dt" style="--i:4" cx="390" cy="144" r="5"/></g><text class="tx lb" style="--i:0" x="30" y="56">1-й раз: ~1,5 ч</text><text class="tx lb" style="--i:4" x="390" y="170" text-anchor="end">5-й раз: ~30 мин</text></svg><p class="q">Многие бросают после первого круга. Не бросай.</p>
+<p class="g">Эти три ошибки делают и новички, и те, кто пробовал уже не раз.</p></div>
+</div></section>
+
+<section><div class="w">
+<div data-a><div class="tag"><b>04</b>Главная идея</div><h2>Твоя работа состоит из двух частей</h2><div class="ln"></div></div>
+<div class="gr g2 st" data-a>
+<div class="card"><span class="n">ЧАСТЬ 1</span><h3>Где нужен ты</h3><p class="g">Экспертиза, решения, разговор с клиентом, ответственность за результат.</p></div>
+<div class="card"><span class="n">ЧАСТЬ 2</span><h3>Где нужен труд</h3><p class="g">Первый черновик, поиск информации, оформление, типовая переписка, отчёты.</p></div>
+</div>
+<div data-a><svg class="sv sq" viewBox="0 0 420 170" role="img" aria-label="Часть 1 остаётся тебе, часть 2 отдаётся нейросети"><g class="rv" style="--dl:0s"><rect class="ao" x="0" y="8" width="196" height="76" rx="14"/><text class="gt" x="16" y="34">ЧАСТЬ 1</text><text class="tx" x="16" y="62">Нужен ты</text></g><path class="ag ad" pathLength="1" style="--dl:0.35s" d="M98 90V114M92 108L98 114L104 108"/><g class="rv" style="--dl:.8s"><rect class="pg" x="28" y="124" width="140" height="34" rx="17"/><text class="gx" x="98" y="146" text-anchor="middle">остаётся тебе</text></g><g class="rv" style="--dl:.5s"><rect class="f" x="224" y="8" width="196" height="76" rx="14"/><text class="gt" x="240" y="34">ЧАСТЬ 2</text><text class="tx" x="240" y="62">Нужен труд</text></g><path class="a ad" pathLength="1" style="--dl:0.85s" d="M322 90V114M316 108L322 114L328 108"/><g class="rv" style="--dl:1.3s"><rect class="ft" x="252" y="124" width="140" height="34" rx="17"/><text class="dk" x="322" y="146" text-anchor="middle">нейросеть</text></g></svg><p>Вторую часть берёт нейросеть. Первая остаётся тебе, и именно за неё клиент платит.</p>
+<p class="q">Настоящего эксперта нейросеть не заменит. Заменит того, кто работал на автомате и выдавал средний результат.</p></div>
+</div></section>
+
+<section><div class="w">
+<div data-a><div class="tag"><b>05</b>Карта</div><h2>Пять видов рутины</h2><div class="ln"></div>
+<p>У большинства специалистов время уходит на пять вещей. Вот что в каждой можно отдать нейросети, а что оставить себе.</p></div>
+<div class="sc sq"><table>
+<thead><tr><th>Рутина</th><th>Отдаём нейросети</th><th>Оставляем себе</th></tr></thead><tbody>
+<tr style="--i:0"><td>Тексты</td><td>первый черновик, структура, варианты формулировок</td><td>смысл, позиция, финальная правка</td></tr>
+<tr style="--i:1"><td>Переписка с клиентами</td><td>первый вариант ответа на типовой вопрос</td><td>решение, цена, обещания</td></tr>
+<tr style="--i:2"><td>Контент</td><td>идеи, план, заготовки постов и сценариев</td><td>твоя история, твой взгляд, примеры из практики</td></tr>
+<tr style="--i:3"><td>Отчёты</td><td>сборка структуры, сведение данных в текст</td><td>выводы и рекомендации</td></tr>
+<tr style="--i:4"><td>Поиск информации</td><td>сбор материала и краткий пересказ</td><td>проверка фактов, выбор источников</td></tr>
+</tbody></table></div>
+<p class="q" data-a>Выбери одну строку. Ту, на которую у тебя уходит больше всего времени. С неё и начнём.</p>
+</div></section>
+
+<section id="prompts"><div class="w">
+<div data-a><div class="tag"><b>06</b>Запросы</div><h2>Готовый запрос и проверка</h2><div class="ln"></div>
+<p>Для каждой рутины ниже есть запрос. Открой нужный, скопируй его и подставь свои данные в скобках. Все запросы собраны по одной схеме: роль, контекст, задача, формат, ограничения.</p></div>
+
+<div class="st" data-a style="margin-top:26px">
+<details class="ac"><summary>Тексты</summary><div class="bd2">
+<div class="pr">
+<p><b class="lbl">Роль</b>Ты — опытный редактор и копирайтер. Пишешь для экспертов в сфере [профессия] и сохраняешь авторский стиль.</p>
+<p><b class="lbl">Контекст</b>Я [профессия]. Текст читает [кто читает]. Главная мысль: [мысль]. Вот пример моего текста, по нему нужно уловить мой стиль: [пример].</p>
+<p><b class="lbl">Задача</b>Напиши [статью, описание услуги или коммерческое предложение]. Действуй по шагам:<br>1. Если не хватает данных, задай мне вопросы.<br>2. Предложи структуру из [N] пунктов.<br>3. Напиши черновик по этой структуре.</p>
+<p><b class="lbl">Формат</b>Сначала структура списком, затем черновик на [N] знаков. Простой язык, короткие абзацы, подзаголовки.</p>
+<p><b class="lbl">Ограничения</b>Не выдумывай факты, цифры и кейсы. Не меняй главную мысль. Без канцелярита и штампов. Если данных нет, оставь пометку [уточнить].</p>
+</div>
+<p class="chk"><b>Проверь:</b> смысл тот, который ты вкладывал? Нет выдуманных фактов и цифр? Текст звучит так, как будто писал ты?</p></div></details>
+<details class="ac"><summary>Переписка с клиентами</summary><div class="bd2">
+<div class="pr">
+<p><b class="lbl">Роль</b>Ты — мой помощник. Отвечаешь клиентам от моего имени: дружелюбно и по делу. Я [профессия].</p>
+<p><b class="lbl">Контекст</b>Клиент написал: [вставь сообщение]. Мои условия: [цена, сроки, что входит]. Вот пример моего прошлого ответа, по нему нужно поймать мой тон: [пример].</p>
+<p><b class="lbl">Задача</b>Составь первый вариант ответа клиенту. Если не хватает данных, сначала задай мне вопросы.</p>
+<p><b class="lbl">Формат</b>Готовый текст ответа, не больше [N] предложений. Без вступлений вроде «Вот ваш ответ».</p>
+<p><b class="lbl">Ограничения</b>Не обещай ничего, чего нет в моих условиях. Не придумывай цены и сроки. Без давления и шаблонных фраз.</p>
+</div>
+<p class="chk"><b>Проверь:</b> цифры и сроки совпадают с твоими условиями? Нет обещаний, которых ты не давал? Тон похож на твой?</p></div></details>
+<details class="ac"><summary>Контент</summary><div class="bd2">
+<div class="pr">
+<p><b class="lbl">Роль</b>Ты — контент-стратег, который работает с экспертами в сфере [профессия].</p>
+<p><b class="lbl">Контекст</b>Я [профессия], моя аудитория: [кто]. Тема: [тема]. Формат: [посты или рилсы].</p>
+<p><b class="lbl">Задача</b>Предложи [N] идей. Для каждой напиши заголовок, главную мысль и пустое место, куда я вставлю пример из своей практики.</p>
+<p><b class="lbl">Формат</b>Нумерованный список. У каждой идеи три строки: «Заголовок», «Мысль», «Мой пример: ____».</p>
+<p><b class="lbl">Ограничения</b>Не придумывай истории обо мне, оставляй для них пустые места. Не предлагай общие темы, которые не связаны с моей аудиторией.</p>
+</div>
+<p class="chk"><b>Проверь:</b> нет выдуманных историй о тебе? Тема нужна твоей аудитории?</p></div></details>
+<details class="ac"><summary>Отчёты</summary><div class="bd2">
+<div class="pr">
+<p><b class="lbl">Роль</b>Ты — аналитик. Готовишь короткие и понятные отчёты для [кто читает].</p>
+<p><b class="lbl">Контекст</b>Вот данные за [период]: [вставь данные или заметки].</p>
+<p><b class="lbl">Задача</b>Составь отчёт. Действуй по шагам:<br>1. Напиши краткий вывод.<br>2. Покажи основные цифры.<br>3. Опиши, что изменилось.<br>4. Предложи, что делать дальше.<br>Если данных не хватает, напиши, каких именно.</p>
+<p><b class="lbl">Формат</b>Сверху вывод на 3–4 строки. Ниже пункты по порядку шагов. Цифры списком или таблицей.</p>
+<p><b class="lbl">Ограничения</b>Не добавляй цифры, которых нет в данных. Не делай выводы, которые данные не подтверждают. Без воды.</p>
+</div>
+<p class="chk"><b>Проверь:</b> цифры совпадают с исходными данными? Выводы твои, а не нейросети?</p></div></details>
+<details class="ac"><summary>Поиск информации</summary><div class="bd2">
+<div class="pr">
+<p><b class="lbl">Роль</b>Ты — исследователь. Объясняешь сложные темы простыми словами.</p>
+<p><b class="lbl">Контекст</b>Мне нужно разобраться в теме: [тема]. Зачем мне это: [для какой задачи].</p>
+<p><b class="lbl">Задача</b>Объясни тему. Расскажи, что такое основные понятия, что важно знать и о чём спорят специалисты. В конце дай список вопросов, которые стоит проверить в первоисточниках.</p>
+<p><b class="lbl">Формат</b>Текст на [N] минут чтения. Подзаголовки, короткие абзацы. В конце список вопросов для проверки.</p>
+<p><b class="lbl">Ограничения</b>Не выдумывай факты, источники и ссылки. Если не уверен, так и скажи. Не используй термины без пояснения.</p>
+</div>
+<p class="chk"><b>Проверь:</b> важные факты и цифры сверь с первоисточниками. Нейросеть может ошибаться. Пока не проверил главное, в работу не бери.</p></div></details>
+</div>
+
+<div class="card" data-a style="margin-top:44px"><h3 class="t">Чтобы не вставлять одно и то же в каждый новый чат</h3><p class="g">Создай в нейросети проект. Загрузи туда информацию о себе, своих клиентах и пару своих текстов. Дальше она будет отвечать точнее с первого раза.</p></div>
+</div></section>
+
+<section><div class="w">
+<div data-a><div class="tag"><b>07</b>План</div><h2>Первые дни</h2><div class="ln"></div></div>
+<div class="mp sq"><div class="sp" style="--p:0;--i:0"><span>1</span><p>Выбери одну рутину.</p></div><svg class="cn" style="--i:1" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0C0 36,20 24,20 60"/></svg><div class="sp" style="--p:0.2;--i:2"><span>2</span><p>Запиши, сколько времени она у тебя обычно занимает.</p></div><svg class="cn" style="--i:3" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0C20 36,8 24,8 60"/></svg><div class="sp" style="--p:0.08;--i:4"><span>3</span><p>Возьми запрос из примеров выше, подставь свои данные и запусти.</p></div><svg class="cn" style="--i:5" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M8 0C8 36,28 24,28 60"/></svg><div class="sp" style="--p:0.28;--i:6"><span>4</span><p>Проверь результат. Поправь то, где нужна твоя экспертиза.</p></div><svg class="cn" style="--i:7" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M28 0C28 36,16 24,16 60"/></svg><div class="sp" style="--p:0.16;--i:8"><span>5</span><p>Засеки время и сравни с обычным.</p></div></div>
+<div data-a><p>Делай это на реальной рабочей задаче, не на учебной.</p>
+<div class="gr g2" style="margin-top:22px">
+<div class="card"><h3>Результат не подошёл?</h3><p class="g">Посмотри, чего не хватило. Чаще всего контекста или примера. Добавь и запусти ещё раз.</p></div>
+<div class="card"><h3>Вышло быстрее?</h3><p class="g">Повтори завтра с другой задачей.</p></div>
+<div class="card"><h3>Вышло медленнее?</h3><p class="g">Это нормально. Не бросай после первого раза.</p></div></div></div>
+</div></section>
+
+<section><div class="w" data-a>
+<div class="tag"><b>08</b>История</div><h2>Задача, которая раньше была мне не по силам</h2><div class="ln"></div>
+<p>Клиенту нужен был Telegram-бот, который продаёт VPN. Принимает оплату, выдаёт доступ, напоминает о продлении подписки. Плюс свой VPN на серверах.</p>
+<svg class="sv sq" viewBox="0 0 420 226" role="img" aria-label="Схема: что должен был уметь бот"><text class="gt" x="0" y="14">ЧТО ДОЛЖЕН БЫЛ УМЕТЬ БОТ</text><rect class="f" x="0" y="26" width="250" height="44" rx="12"/><text class="tx" x="16" y="54">Приём оплаты</text><g class="bd" style="--i:0"><rect class="ao" x="266" y="36" width="150" height="24" rx="12"/><text class="tt" x="341" y="53" text-anchor="middle">раньше не делал</text></g><path class="a fa" style="--i:.5" d="M125 72V94M119 88L125 94L131 88"/><rect class="f" x="0" y="98" width="250" height="44" rx="12"/><text class="tx" x="16" y="126">Выдача доступа к VPN</text><g class="bd" style="--i:1"><rect class="ao" x="266" y="108" width="150" height="24" rx="12"/><text class="tt" x="341" y="125" text-anchor="middle">раньше не делал</text></g><path class="a fa" style="--i:1.5" d="M125 144V166M119 160L125 166L131 160"/><rect class="f" x="0" y="170" width="250" height="44" rx="12"/><text class="tx" x="16" y="198">Напоминание о продлении</text><g class="bd" style="--i:2"><rect class="ao" x="266" y="180" width="150" height="24" rx="12"/><text class="tt" x="341" y="197" text-anchor="middle">раньше не делал</text></g></svg><p>Ничего похожего я раньше не делал. Оплату в бота не подключал. VPN на серверах не настраивал. Без нейросети я бы за этот заказ не взялся.</p>
+<p>В итоге я взялся. Код писала нейросеть. Я ставил задачи, проверял результат и просил поправить. Как режиссёр на съёмках.</p><svg class="sv sq" viewBox="0 0 420 290" role="img" aria-label="Круг: я ставлю задачу, нейросеть пишет код, я проверяю и даю правки"><g class="rv" style="--dl:0s"><rect class="f" x="120" y="10" width="180" height="46" rx="23"/><text class="tx" x="210" y="38" text-anchor="middle">Я ставлю задачу</text></g><path class="a ad" pathLength="1" style="--dl:0.25s;--du:0.45s" d="M302 33C360 33 372 120 333 207"/><path class="a rv" style="--dl:0.7s" d="M326 197L333 208L340 197"/><g class="rv" style="--dl:.75s"><rect class="ft" x="240" y="214" width="180" height="52" rx="26"/><text class="dk" x="330" y="237" text-anchor="middle">Нейросеть</text><text class="dk" x="330" y="255" text-anchor="middle">пишет код</text></g><path class="a ad" pathLength="1" style="--dl:1s;--du:0.25s" d="M236 240L186 240"/><path class="a rv" style="--dl:1.2s" d="M194 233L186 240L194 247"/><g class="rv" style="--dl:1.25s"><rect class="f" x="0" y="214" width="180" height="52" rx="26"/><text class="tx" x="90" y="237" text-anchor="middle" style="font-size:14px">Я проверяю результат</text><text class="tx" x="90" y="255" text-anchor="middle" style="font-size:14px">и даю правки</text></g><path class="a ad" pathLength="1" style="--dl:1.5s;--du:0.45s" d="M90 210C86 120 70 33 116 33"/><path class="a rv" style="--dl:1.95s" d="M108 26L116 33L108 40"/><g class="rv" style="--dl:2.1s"><text class="rt2" x="210" y="146" text-anchor="middle" style="fill:#2DD4BF;font:600 44px Manrope,sans-serif">↻</text><text class="gx" x="210" y="176" text-anchor="middle">и так по кругу</text></g></svg>
+<p>Шло не идеально. Я сидел на бесплатном тарифе, лимиты быстро кончались, приходилось ждать. Но клиенту вышло недорого. А мне быстрее, чем если бы я учился всему этому сам.</p>
+<p class="q">Нейросеть не заменила меня. Она позволила взять задачу выше моего уровня.</p>
+</div></section>
+
+<section><div class="w">
+<div data-a><div class="tag"><b>09</b>Страхи</div><h2>Что обычно останавливает</h2><div class="ln"></div></div>
+<div class="gr st" data-a>
+<div class="card"><h3>«Я не программист»</h3><p class="g">Им и не нужно быть. От тебя нужны две вещи: сказать, что сделать, и проверить результат.</p></div>
+<div class="card"><h3>«Придётся платить за дорогие подписки»</h3><p class="g">Я делал на бесплатном тарифе. Лимиты были, приходилось ждать, но всё работало. Платная версия стоит около 2 500 ₽ в месяц.</p></div>
+<div class="card"><h3>«Их десятки, я потеряюсь»</h3><p class="g">Возьми одну нейросеть: Claude, ChatGPT или Gemini. И одну задачу. Остальное потом.</p></div>
+<div class="card"><h3>«А если она ошибётся?»</h3><p class="g">Ошибётся. Поэтому каждый результат нужно проверять и исправлять, если он не подходит. А решение всегда за тобой.</p></div>
+<div class="card"><h3>«А если в работе данные клиента, которые нельзя показывать?»</h3><p class="g">Убери имена, контакты и цифры. Поставь вместо них «Клиент А», «Сумма 1».</p></div>
+</div>
+</div></section>
+
+<section><div class="w" data-a>
+<div class="tag"><b>10</b>Следующий шаг</div><h2>План закончился</h2><div class="ln"></div>
+<p>Если он тебе пригодился, у меня одна просьба.</p>
+<p>Я собираю программу, которая помогает внедрить нейросеть в работу под задачи каждого человека. Чтобы она получилась полезной, мне нужно знать, с чем ты сталкиваешься на самом деле.</p>
+<div class="card cta" style="margin-top:26px">
+<h3>Ответь на несколько вопросов. Это около 5 минут.</h3>
+<p class="g">Взамен, когда программа будет готова, я выберу 3 человек из тех, кто ответил, и проведу их через неё <b class="t">со скидкой 90%</b> в обмен на отзыв и кейс.</p>
+<p class="g">Хочешь попасть в этот список? Оставь в конце опроса свой Telegram.</p>
+<a class="btn" id="cta" href="https://forms.yandex.ru/u/6ad5f51e5057b298f93f8fd3" target="_blank" rel="noopener">Ответить на вопросы</a></div>
+</div></section>
+
+<a class="btn" id="fx" href="https://forms.yandex.ru/u/6ad5f51e5057b298f93f8fd3" target="_blank" rel="noopener">Ответить на вопросы</a>
+
+<footer>
+    © 2026<br>
+    Mustafaev Rashid
+</footer>
+
+<script>
+(function(){
+var d=document,r=d.documentElement;
+d.querySelectorAll('.pr').forEach(function(p){
+ var t=[].map.call(p.querySelectorAll('p'),function(q){var c=q.cloneNode(true);[].forEach.call(c.querySelectorAll('br'),function(x){x.replaceWith('\n')});[].forEach.call(c.querySelectorAll('.lbl'),function(x){x.textContent=x.textContent.toUpperCase()+': '});return c.textContent.trim()}).join('\n\n'),b=d.createElement('button');
+ p.innerHTML=p.innerHTML.replace(/\[[^\]]+\]/g,'<em>$&</em>');
+ b.className='cp';b.textContent='Копировать';
+ b.onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Скопировано'},function(){b.textContent='Выдели вручную'});setTimeout(function(){b.textContent='Копировать'},1800)};
+ p.appendChild(b);
+});
+var ac=d.querySelectorAll('details.ac'),rm=matchMedia('(prefers-reduced-motion:reduce)');
+function stop(x){if(x._a){x._a.cancel();x._b&&x._b.cancel();x._a=x._b=null}}
+function openIt(x){
+ var from=x.offsetHeight,b=x.querySelector('.bd2');stop(x);x.classList.add('o');x.open=true;
+ if(rm.matches)return;
+ var to=x.offsetHeight;
+ x._a=x.animate({height:[from+'px',to+'px']},{duration:520,easing:'cubic-bezier(.22,.8,.26,1)'});
+ x._b=b.animate({opacity:[0,1],transform:['translateY(-8px)','none']},{duration:520,delay:90,easing:'cubic-bezier(.22,.8,.26,1)',fill:'backwards'});
+ x._a.onfinish=function(){x._a=x._b=null;if(x.getBoundingClientRect().top<0)x.scrollIntoView({behavior:'smooth',block:'start'})};
+}
+function closeIt(x){
+ var from=x.offsetHeight,sm=x.firstElementChild,to=sm.offsetHeight+x.offsetHeight-x.clientHeight,b=x.querySelector('.bd2');stop(x);x.classList.remove('o');
+ if(rm.matches){x.open=false;return}
+ x._a=x.animate({height:[from+'px',to+'px']},{duration:420,easing:'cubic-bezier(.4,0,.2,1)'});
+ x._b=b.animate({opacity:[1,0],transform:['none','translateY(-6px)']},{duration:220,easing:'ease-in',fill:'forwards'});
+ x._a.onfinish=function(){x.open=false;x._b&&x._b.cancel();x._a=x._b=null};
+}
+ac.forEach(function(x){x.firstElementChild.addEventListener('click',function(e){
+ e.preventDefault();
+ if(x.classList.contains('o'))return closeIt(x);
+ ac.forEach(function(y){if(y!==x&&y.classList.contains('o'))closeIt(y)});
+ openIt(x);
+})});
+d.querySelectorAll('.sc tbody tr').forEach(function(tr){var h=d.querySelectorAll('.sc th');[].forEach.call(tr.children,function(td,i){if(h[i])td.setAttribute('data-l',h[i].textContent)})});
+var bar=d.getElementById('bar'),fx=d.getElementById('fx'),cta=d.getElementById('cta');
+addEventListener('scroll',function(){bar.style.transform='scaleX('+(scrollY/(r.scrollHeight-innerHeight||1))+')';fx.classList.toggle('on',scrollY>900&&cta.getBoundingClientRect().top>innerHeight)},{passive:true});
+if(!('IntersectionObserver' in window))return;
+r.classList.add('js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
+ var el=e.target;
+ (el.classList.contains('st')?[el]:[]).concat([].slice.call(el.querySelectorAll('.st'))).forEach(function(s){[].forEach.call(s.children,function(c,i){c.style.transitionDelay=i*.08+'s';c.style.setProperty('--d',i*.08+'s')})});
+ el.classList.add('in');});},{rootMargin:'0px 0px -10% 0px'});
+d.querySelectorAll('[data-a]').forEach(function(el){io.observe(el)});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io2.unobserve(e.target);e.target.classList.add('in')}})},{threshold:.6});
+d.querySelectorAll('.sq').forEach(function(el){io2.observe(el)});
+})();
+</script>
+</body></html>
